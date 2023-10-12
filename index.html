@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap">
+
+    <link href="https://db.onlinewebfonts.com/c/9b06ae83a4412168ed194a8ed31218c2?family=Mabry+Pro+Medium" rel="stylesheet">
+
+    <link rel="Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="Stylesheet" href="/web practise folder/main To-do Proj/style.css">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <h1>To Do List</h1>
+
+    <input placeholder="Enter To-Do" class="inputed_value border">
+
+    <input type="date" placeholder="Date" class="date_selector border">
+
+    <button class="add_button js-add-todo-button">ADD</button>
+
+    <p id="no-tasks-message"></p>
+
+    <div class="display_result"></div>
+
+    <div id="warning-message"></div>
+    <script src="/web practise folder/main To-do Proj/script.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- --------------------------------------================-------------------------------------- -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap">
+    <link href="https://db.onlinewebfonts.com/c/9b06ae83a4412168ed194a8ed31218c2?family=Mabry+Pro+Medium"
+        rel="stylesheet">
+    <link rel="Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>To Do List</title>
+    <style>
+        body {
+            font-family: 'Lexend Mega', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .border {
+            font-family: 'Lexend Mega', sans-serif;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 8px 14px;
+            width: 250px;
+        }
+
+        .inputed_value,
+        .date_selector {
+            font-family: 'Lexend Mega', sans-serif;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .add_button {
+            font-family: 'Lexend Mega', sans-serif;
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #0088FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 1px 2px 0.8px 1px rgba(0 0 0/85%);
+        }
+
+        .add_button:hover {
+            background-color: #0077CC;
+        }
+
+        .delet_button , .edit-button{
+            font-family: 'Lexend Mega', sans-serif;
+            display: block;
+            padding: 5px 10px;
+            background-color: #FF5533;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 1px 2px 0.8px 1px rgba(0 0 0/85%);
+        }
+        .edit-button{
+            background-color:  #7fbc8c;
+        }
+
+        .edit-button:hover {
+            background-color: #98d4a5;
+        }
+        .delet_button:hover{
+            background-color: #FF2200;
+        }
+
+        .display_result {
+            font-family: 'Mabry Pro Medium', sans-serif;
+            display: grid;
+            grid-template-columns: max-content 1fr .1fr .30fr .30fr;
+            grid-gap: 15px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #f0f0f0;
+            border: 3px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        /* Set a maximum width for the first column */
+        .display_result div {
+            max-width: 500px;
+
+        }
+
+        .display_result div {
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            word-wrap: break-word;
+            /* Wrap long text */
+        }
+
+
+
+        #warning-message {
+            font-family: 'Lexend Mega', sans-serif;
+            color: red;
+            text-align: center;
+        }
+
+        #no-tasks-message {
+            font-family: 'Lexend Mega', sans-serif;
+            text-align: center;
+        }
+
+        /* Add this to your CSS */
+        .important-text {
+            background: linear-gradient(45deg, #c4a1ff, #a388ee);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        #important-button {
+            width: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            padding-left: 0.50rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>To Do List</h1>
+
+    <input placeholder="Enter To-Do" class="inputed_value border">
+
+    <input type="date" placeholder="Date" class="date_selector border">
+
+    <button class="add_button js-add-todo-button">ADD</button>
+
+    <p id="no-tasks-message"></p>
+
+    <div class="display_result"></div>
+
+    <div id="warning-message"></div>
+
+
+
+
+    <script>
+        // Initialize the to-do list from local storage or use an empty array
+        const Todo_list = JSON.parse(localStorage.getItem('todoList')) || [];
+
+        rendertodolist();
+
+        function rendertodolist() {
+            let final_todo_list = '';
+            const noTasksMessage = document.getElementById('no-tasks-message');
+
+            if (Todo_list.length === 0) {
+                noTasksMessage.textContent = "No tasks are available.";
+            } else {
+                noTasksMessage.textContent = "";
+
+                for (let i = 0; i < Todo_list.length; i++) {
+                    const looped_resultobj = Todo_list[i];
+                    const todotask = looped_resultobj.task_list;
+                    const todo_date = looped_resultobj.datee;
+
+                    let html_code = `
+                        <div>${todotask}</div>
+                        <div>${todo_date}</div>
+                        <i class="fa-regular fa-star important-button" id="important-button"></i>
+                        <button class="edit-button" id="edit-button">Edit</button>
+                        <button class='delet_button JS-delete-todo-button' data-index="${i}">Delete</button>
+                        `;
+                    final_todo_list += html_code;
+                }
+            }
+
+            document.querySelector('.display_result').innerHTML = final_todo_list;
+
+            document.querySelectorAll('.JS-delete-todo-button')
+                .forEach((delete_button) => {
+                    delete_button.addEventListener('click', (event) => {
+                        const indexToDelete = event.target.getAttribute('data-index');
+                        if (indexToDelete !== null) {
+                            Todo_list.splice(indexToDelete, 1);
+                            saveTodoListToLocalStorage();
+                            rendertodolist();
+                        }
+                    });
+                });
+        }
+
+        function showWarning(message) {
+            const warningMessage = document.getElementById('warning-message');
+            warningMessage.textContent = message;
+        }
+
+        function clearWarning() {
+            const warningMessage = document.getElementById('warning-message');
+            warningMessage.textContent = "";
+        }
+
+        function adding_the_todolist() {
+            const entering_todolist = document.querySelector('.inputed_value');
+            const todo_list_entered = entering_todolist.value;
+            const date_get_element = document.querySelector('.date_selector');
+            const date_store_vari = date_get_element.value;
+            const noTasksMessage = document.getElementById('no-tasks-message');
+
+            if (todo_list_entered.trim() === '') {
+                showWarning("Fill the task");
+            } else {
+                clearWarning();
+                Todo_list.push({
+                    task_list: todo_list_entered,
+                    datee: date_store_vari
+                });
+
+                entering_todolist.value = '';
+
+                saveTodoListToLocalStorage();
+                rendertodolist();
+
+                noTasksMessage.textContent = "";
+            }
+        }
+
+        function saveTodoListToLocalStorage() {
+            localStorage.setItem('todoList', JSON.stringify(Todo_list));
+        }
+
+        document.querySelector('.js-add-todo-button')
+            .addEventListener('click', () => {
+                adding_the_todolist();
+            });
+
+        document.querySelector('.inputed_value')
+            .addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    adding_the_todolist();
+                }
+            });
+
+        // imp code
+        document.getElementById('important-button').addEventListener('click', () => {
+            const textElements = document.querySelectorAll('.display_result div:first-child');
+
+            textElements.forEach((element) => {
+                element.classList.toggle('important-text');
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html> -->
+
+<!-- 2222222222222222222222  with text edit feature-->

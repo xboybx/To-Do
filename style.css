@@ -1,0 +1,165 @@
+*{
+    padding: 0px;
+    margin: 0px;
+   border:border-box;
+}
+
+
+
+body {
+    font-family: 'Lexend Mega', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.border {
+    font-family: 'Lexend Mega', sans-serif;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 8px 14px;
+    width: 250px;
+}
+
+.inputed_value,
+.date_selector {
+    font-family: 'Lexend Mega', sans-serif;
+    display: block;
+    margin: 10px auto;
+}
+
+.add_button {
+    font-family: 'Lexend Mega', sans-serif;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #0088FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 2px 0.8px 1px rgba(0, 0, 0, 85%);
+}
+
+.add_button:hover {
+    background-color: #0077CC;
+}
+
+.delet_button,
+.edit-button {
+    font-family: 'Lexend Mega', sans-serif;
+    display: block;
+    padding: 5px 10px;
+    background-color: #FF5533;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 2px 0.8px 1px rgba(0, 0, 0, 85%);
+}
+
+.edit-button {
+    background-color: #7fbc8c;
+}
+
+.edit-button:hover {
+    background-color: #98d4a5;
+}
+
+.delet_button:hover {
+    background-color: #FF2200;
+}
+
+.display_result {
+    font-family: 'Mabry Pro Medium', sans-serif;
+    display: grid;
+    grid-template-columns: max-content 1fr .1fr .30fr .30fr;
+    grid-gap: 15px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    border: 3px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.display_result div {
+    max-width: 500px;
+    border-bottom: 1px solid #333;
+    border-radius: px;
+    padding: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#warning-message {
+    font-family: 'Lexend Mega', sans-serif;
+    color: red;
+    text-align: center;
+}
+
+#no-tasks-message {
+    font-family: 'Lexend Mega', sans-serif;
+    text-align: center;
+}
+
+.important-text {
+    background: linear-gradient(45deg, #c4a1ff, #a388ee);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#important-button {
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    padding-left: 0.50rem;
+}
+
+
+
+   
+
+
+@media (max-width: 480px) {
+    .display_result {
+        grid-template-columns: 1fr;
+    
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .important-button {
+        padding-left: 0.25rem;
+    }
+
+}
+
+
+
+       /* Media query for screens up to 385px */
+       @media (max-width: 375px) {
+        .delet_button, .edit-button {
+            font-size: 12px;
+
+        }
+    }
+
+    /* Media query for screens up to 320px */
+    @media (max-width: 320px) {
+        .delet_button, .edit-button {
+            font-size: 5px;
+            padding: 3px 6px;
+            font: none;
+    }
+}
