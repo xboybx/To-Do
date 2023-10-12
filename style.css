@@ -1,10 +1,8 @@
-*{
-    padding: 0px;
-    margin: 0px;
-   border:border-box;
+* {
+    padding: 0;
+    margin: 0;
+    border: border-box;
 }
-
-
 
 body {
     font-family: 'Lexend Mega', sans-serif;
@@ -15,36 +13,36 @@ body {
 
 h1 {
     text-align: center;
-    margin-top: 20px;
-    font-size: 24px;
+    margin-top: 1.25rem; 
+    font-size: 1.5rem; 
 }
 
 .border {
     font-family: 'Lexend Mega', sans-serif;
-    border: 1px solid #333;
-    border-radius: 5px;
-    padding: 8px 14px;
-    width: 250px;
+    border: 0.0625rem solid #333;
+    border-radius: 0.3125rem;
+    padding: 0.5rem 0.875rem; 
+    width: 15.625rem; 
 }
 
 .inputed_value,
 .date_selector {
     font-family: 'Lexend Mega', sans-serif;
     display: block;
-    margin: 10px auto;
+    margin: 0.625rem auto; 
 }
 
 .add_button {
     font-family: 'Lexend Mega', sans-serif;
     display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
+    margin: 0.625rem auto; 
+    padding: 0.625rem 1.25rem; 
     background-color: #0088FF;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3125rem; 
     cursor: pointer;
-    box-shadow: 1px 2px 0.8px 1px rgba(0, 0, 0, 85%);
+    box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
 }
 
 .add_button:hover {
@@ -55,13 +53,13 @@ h1 {
 .edit-button {
     font-family: 'Lexend Mega', sans-serif;
     display: block;
-    padding: 5px 10px;
+
     background-color: #FF5533;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3125rem; 
     cursor: pointer;
-    box-shadow: 1px 2px 0.8px 1px rgba(0, 0, 0, 85%);
+    box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
 }
 
 .edit-button {
@@ -79,21 +77,21 @@ h1 {
 .display_result {
     font-family: 'Mabry Pro Medium', sans-serif;
     display: grid;
-    grid-template-columns: max-content 1fr .1fr .30fr .30fr;
-    grid-gap: 15px;
-    max-width: 800px;
-    margin: 20px auto;
+    grid-template-columns: max-content 1fr .1fr .30fr .30fr; 
+    grid-gap: 0.9375rem; 
+    max-width: 50rem; 
+    margin: 1.25rem auto; 
     background-color: #f0f0f0;
-    border: 3px solid #333;
-    border-radius: 5px;
-    padding: 10px;
+    border: 0.1875rem solid #333; 
+    border-radius: 0.3125rem; 
+    padding: 0.625rem; 
 }
 
 .display_result div {
-    max-width: 500px;
-    border-bottom: 1px solid #333;
-    border-radius: px;
-    padding: 10px;
+    max-width: 31.25rem;
+    border-bottom: 0.0625rem solid #333; 
+    border-radius: 0.0625rem; 
+    padding: 0.625rem; 
     text-align: center;
     word-wrap: break-word;
 }
@@ -116,50 +114,10 @@ h1 {
 }
 
 #important-button {
-    width: 15px;
+    width: 0.9375rem; 
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
-    padding-left: 0.50rem;
-}
-
-
-
-   
-
-
-@media (max-width: 480px) {
-    .display_result {
-        grid-template-columns: 1fr;
-    
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    .important-button {
-        padding-left: 0.25rem;
-    }
-
-}
-
-
-
-       /* Media query for screens up to 385px */
-       @media (max-width: 375px) {
-        .delet_button, .edit-button {
-            font-size: 12px;
-
-        }
-    }
-
-    /* Media query for screens up to 320px */
-    @media (max-width: 320px) {
-        .delet_button, .edit-button {
-            font-size: 5px;
-            padding: 3px 6px;
-            font: none;
-    }
+    padding-left: 0.03125rem; 
 }
