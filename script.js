@@ -18,17 +18,19 @@ function rendertodolist() {
             const looped_resultobj = Todo_list[i];
             const todotask = looped_resultobj.task_list;
             const todo_date = looped_resultobj.datee;
+            
+                     let starColorStyle = looped_resultobj.important ? 'color: #e3a018;' : ''; // Set the star color to #e3a018 if important
+                   let textColorStyle = looped_resultobj.important ? 'color: red;' : ''; // Set the text color to red if important
 
-            // Toggle text color based on the 'important' property
-            let textColorStyle = looped_resultobj.important ? 'color: red;' : '';
 
-            let html_code = `
+         let html_code = `
             <div style="${textColorStyle}">${todotask}</div>
             <div>${todo_date}</div>
-            <i class="fa-${looped_resultobj.important ? 'solid' : 'regular'} fa-star important-button" id="important-button" data-index="${i}"></i>
-            <button class="edit-button">Edit</button>
-            <button class='delet_button JS-delete-todo-button' data-index="${i}">Delete</button>
-          `;
+            <i class="fa-${looped_resultobj.important ? 'solid' : 'regular'} fa-star important-button" id="important-button" data-index="${i}" style="${starColorStyle}"></i>
+               <button class="edit-button">Edit</button>
+               <button class='delet_button JS-delete-todo-button' data-index="${i}">Delete</button>
+                                                                                                     `;
+
             final_todo_list += html_code;
         }
     }
