@@ -151,25 +151,31 @@ function addEditListeners() {
 }
 
 
-function addImportantListeners() {
-    const importantButtons = document.querySelectorAll('.important-button');
+        function addImportantListeners() {
+  const importantButtons = document.querySelectorAll('.important-button');
 
-    importantButtons.forEach((importantButton, index) => {
-        importantButton.addEventListener('click', () => {
-            // Toggle the 'important' property of the task
-            Todo_list[index].important = !Todo_list[index].important;
+  importantButtons.forEach((importantButton, index) => {
+    importantButton.addEventListener('click', () => {
+      // Toggle the 'important' property of the task
+      Todo_list[index].important = !Todo_list[index].important;
 
-            // Update the star icon
-            const starIcon = importantButton;
-            starIcon.className = `fa-${Todo_list[index].important ? 'solid' : 'regular'} fa-star important-button`;
+      // Update the star icon color to yellow when important
+      const starIcon = importantButton;
+      if (Todo_list[index].important) {
+        starIcon.className = "fa-solid fa-star important-button";
+        starIcon.style.color = "#e3a018"; // Change the star color to yellow
+      } else {
+        starIcon.className = "fa-regular fa-star important-button";
+        starIcon.style.color = ""; // Reset to default color
+      }
 
-            // Toggle text color when the 'important' button is clicked
-            const taskText = document.querySelectorAll('.display_result div')[index * 2];
-            taskText.style.color = Todo_list[index].important ? '#ff4911' : ''; // Set red color if important, else reset to default
+      // Toggle text color when the 'important' button is clicked
+      const taskText = document.querySelectorAll('.display_result div')[index * 2];
+      taskText.style.color = Todo_list[index].important ? 'red' : ''; // Set red color if important, else reset to default
 
-            saveTodoListToLocalStorage();
-        });
+      saveTodoListToLocalStorage();
     });
+  });
 }
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // // Initialize the to-do list from local storage or use an empty array
