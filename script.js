@@ -75,7 +75,7 @@ function adding_the_todolist() {
         showWarning("Enter your task");
     } else {
         clearWarning();
-        Todo_list.push({
+        Todo_list.unshift({
             task_list: todo_list_entered,
             datee: date_store_vari,
             important: false // Initially, the task is not marked as important
