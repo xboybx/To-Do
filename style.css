@@ -1,7 +1,9 @@
+
       * {
             margin: 0px;
             padding: 0px;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
         
         body {
@@ -41,7 +43,8 @@ h1 {
     border: none;
     border-radius: 0.3125rem; 
     cursor: pointer;
-    box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
+    -webkit-box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
+            box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
 }
 
 .add_button:hover {
@@ -58,7 +61,8 @@ h1 {
     border: none;
     border-radius: 0.3125rem; 
     cursor: pointer;
-    box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
+    -webkit-box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
+            box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
 }
 
 .edit-button {
@@ -75,7 +79,11 @@ h1 {
 
 .display_result {
     font-family: 'Mabry Pro Medium', sans-serif;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: -webkit-max-content 0.9375rem 1fr 0.9375rem .1fr 0.9375rem .30fr 0.9375rem .30fr;
+    -ms-grid-columns: max-content 0.9375rem 1fr 0.9375rem .1fr 0.9375rem .30fr 0.9375rem .30fr;
+    grid-template-columns: -webkit-max-content 1fr .1fr .30fr .30fr;
     grid-template-columns: max-content 1fr .1fr .30fr .30fr; 
     grid-gap: 0.9375rem; 
     max-width: 50rem; 
@@ -107,6 +115,7 @@ h1 {
 }
 
 .important-text {
+    background: -o-linear-gradient(45deg, #c4a1ff, #a388ee);
     background: linear-gradient(45deg, #c4a1ff, #a388ee);
     -webkit-background-clip: text;
     color: transparent;
@@ -114,9 +123,15 @@ h1 {
 
 #important-button {
     width: 0.9375rem; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 1rem;
     padding-left: 0.03125rem; 
 }
