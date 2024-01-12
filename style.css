@@ -1,4 +1,4 @@
-
+/* 
       * {
             margin: 0px;
             padding: 0px;
@@ -164,8 +164,186 @@ footer p {
 
 #links a :hover{
     color: rgb(247, 57, 155);
+} */
+
+
+
+/* ----------------------------------------CSS with Only One Font--------------------------------------------------------------------------- */
+
+      * {
+            margin: 0px;
+            padding: 0px;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+          font-family:'Mabry Pro Medium',sans-serif
+        /* font-family:'Lexend Mega' ,sans-serif */
+          
+          
+        }
+        
+        body {
+            font-family: 'Lexend Mega', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0px;
+            padding: 0px;
+        }
+h1 {
+    text-align: center;
+    margin-top: 1.25rem; 
+    font-size: 1.5rem; 
+}
+
+.border {
+   
+    border: 0.0625rem solid #333;
+    border-radius: 0.3125rem;
+    padding: 0.5rem 0.875rem; 
+    width: 15.625rem; 
+}
+
+.inputed_value,
+.date_selector {
+    
+    display: block;
+    margin: 0.625rem auto; 
+}
+
+.add_button {
+    
+    display: block;
+    margin: 0.625rem auto; 
+    padding: 0.625rem 1.25rem; 
+    background-color: #0088FF;
+    color: white;
+    border: none;
+    border-radius: 0.3125rem; 
+    cursor: pointer;
+    -webkit-box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
+            box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
+}
+
+.add_button:hover {
+    background-color: #0077CC;
+}
+
+.delet_button,
+.edit-button {
+    
+    display: block;
+
+    background-color: #FF5533;
+    color: white;
+    border: none;
+    border-radius: 0.3125rem; 
+    cursor: pointer;
+    -webkit-box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
+            box-shadow: 0.0625rem 0.125rem 0.05rem 0.0625rem rgba(0, 0, 0, 85%);
+}
+
+.edit-button {
+    background-color: #7fbc8c;
+}
+
+.edit-button:hover {
+    background-color: #98d4a5;
+}
+
+.delet_button:hover {
+    background-color: #FF2200;
+}
+
+.display_result {
+    
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: -webkit-max-content 0.9375rem 1fr 0.9375rem .1fr 0.9375rem .30fr 0.9375rem .30fr;
+    -ms-grid-columns: max-content 0.9375rem 1fr 0.9375rem .1fr 0.9375rem .30fr 0.9375rem .30fr;
+    grid-template-columns: -webkit-max-content 1fr .1fr .30fr .30fr;
+    grid-template-columns: max-content 1fr .1fr .30fr .30fr; 
+    grid-gap: 0.9375rem; 
+    max-width: 50rem; 
+    margin: 1.25rem auto; 
+    background-color: #f0f0f0;
+    border: 0.1875rem solid #333; 
+    border-radius: 0.3125rem; 
+    padding: 0.625rem; 
+}
+
+.display_result div {
+    max-width: 31.25rem;
+    border-bottom: 0.0625rem solid #333; 
+    border-radius: 0.0625rem; 
+    padding: 0.625rem; 
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#warning-message {
+    
+    color: red;
+    text-align: center;
+}
+
+#no-tasks-message {
+    
+    text-align: center;
+}
+
+.important-text {
+    background: -o-linear-gradient(45deg, #c4a1ff, #a388ee);
+    background: linear-gradient(45deg, #c4a1ff, #a388ee);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#important-button {
+    width: 0.9375rem; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1rem;
+    padding-left: 0.03125rem; 
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+    right:1.02rem;
+    width: 100%;
+    height: 0.10rem;
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+footer p {
+    color: rgb(0, 0, 0);
+    font-size: 8px;
+    margin-bottom: 1px;
+    margin-top: -11px;
+}
+
+#links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+}
+
+#links a :hover{
+    color: rgb(247, 57, 155);
 }
 
 #links{
     margin-left: -0.1rem;
 }
+
+
+
