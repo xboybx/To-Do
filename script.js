@@ -51,6 +51,8 @@ function rendertodolist() {
 
     addEditListeners(); // Add edit listeners when rendering
     addImportantListeners(); // Add important listeners when rendering
+     addDateChangeListeners(); // Add date change listeners when rendering
+
 
 }
 
@@ -178,6 +180,18 @@ function addEditListeners() {
       saveTodoListToLocalStorage();
     });
   });
+}
+
+function addDateChangeListeners() {
+    const dateInputs = document.querySelectorAll('.task-date');
+
+    dateInputs.forEach((dateInput, index) => {
+        dateInput.addEventListener('change', (event) => {
+            const newDate = event.target.value;
+            Todo_list[index].datee = newDate; // Update the task date in the array
+            saveTodoListToLocalStorage(); // Save the updated list to local storage
+        });
+    });
 }
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // // Initialize the to-do list from local storage or use an empty array
